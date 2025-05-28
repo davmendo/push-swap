@@ -1,3 +1,20 @@
 ARG=$(shuf -i 0-10000 -n 100 | tr '\n' ' ')
 RESULT=$(./push_swap $ARG)
 echo "$RESULT" | ./checker_linux $ARG && echo "Instructions: $(echo "$RESULT" | wc -l)"
+
+
+
+
+shuf -i 0-10000 -n 100: Gera 100 números aleatórios e únicos no intervalo entre 0 e 10000.
+
+O tr (translate) troca todas as quebras de linha (\n) por espaços (' ').
+
+RESULT=$(./push_swap $ARG) Executa o programa push_swap, passando como argumentos os 100 números armazenados em ARG.
+
+echo "$RESULT": Imprime a saída do push_swap armazenada em RESULT.
+
+| ./checker_linux $ARG:Passa a saída do push_swap para o programa checker_linux via pipe
+
+&& echo "Instructions: $(echo "$RESULT" | wc -l)":
+Se o checker_linux retornar sucesso, então imprime a mensagem "Instructions: N", onde N é o número de linhas na saída de push_swap (ou seja, o número de instruções usadas).
+O wc -l conta quantas linhas tem a saída de push_swap.

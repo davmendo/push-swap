@@ -1,5 +1,3 @@
-# Makefile para push_swap
-
 NAME        := push_swap
 LIBFT_DIR   := libft
 LIBFT       := $(LIBFT_DIR)/libft.a
@@ -27,15 +25,12 @@ OBJS_PUSH_SWAP := $(SRCS_PUSH_SWAP:.c=.o)
 
 all: $(NAME)
 
-# Compila libft se necessário
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-# Gera os .o a partir dos .c
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Linka o push_swap
 $(NAME): $(OBJS_PUSH_SWAP) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $(OBJS_PUSH_SWAP) $(LIBFT)
 

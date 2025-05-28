@@ -1,7 +1,4 @@
-ARG=$(shuf -i 0-10000 -n 100 | tr '\n' ' ')
-RESULT=$(./push_swap $ARG)
-echo "$RESULT" | ./checker_linux $ARG && echo "Instructions: $(echo "$RESULT" | wc -l)"
-
+ARG=$(shuf -i 0-10000 -n 100 | tr '\n' ' '); RESULT=$(./push_swap $ARG); echo "$RESULT" | ./checker_linux $ARG && echo "Instructions: $(echo "$RESULT" | wc -l)"
 
 
 

@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// Static helper function to print operation names
 static void	print_op(char *op)
 {
 	write(1, op, ft_strlen(op));

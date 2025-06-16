@@ -25,7 +25,7 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-/* Core Functions */
+/* core functions */
 void	error_exit(void);
 t_node	*create_node(int value);
 void	add_back(t_node **stack, t_node *new_node);
@@ -33,20 +33,20 @@ t_node	*parse_arguments(int argc, char **argv);
 void	free_stack(t_node *stack);
 void	free_split(char **split);
 
-/* Utils */
+/* utils */
 int		list_length(t_node *stack);
 int		is_valid_number(char *str);
 int		has_duplicates(t_node *stack);
 int		is_sorted(t_node *stack);
 void	assign_index(t_node *stack);
 
-/* Sorting Algorithms */
+/* sorting algorithms */
 void	sort_small(t_node **stack_a, t_node **stack_b);
 void	sort_three(t_node **stack_a);
 void	sort_five(t_node **stack_a, t_node **stack_b);
 void	sort_chunks(t_node **stack_a, t_node **stack_b);
 
-/* Basic Operations */
+/* basic operations */
 void	op_sa(t_node **stack_a);
 void	op_sb(t_node **stack_b);
 void	op_ss(t_node **stack_a, t_node **stack_b);
@@ -59,7 +59,7 @@ void	op_rra(t_node **stack_a);
 void	op_rrb(t_node **stack_b);
 void	op_rrr(t_node **stack_a, t_node **stack_b);
 
-/* Operations with print */
+/* operations with print */
 void	do_sa(t_node **a);
 void	do_sb(t_node **b);
 void	do_ss(t_node **a, t_node **b);

@@ -4,7 +4,6 @@ LIBFT       := $(LIBFT_DIR)/libft.a
 CC          := cc
 CFLAGS      := -Wall -Wextra -Werror
 
-# Fontes e objetos do push_swap
 SRCS_PUSH_SWAP := \
 	push_swap_main.c \
 	operations1.c \
@@ -35,13 +34,10 @@ $(NAME): $(OBJS_PUSH_SWAP) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $(OBJS_PUSH_SWAP) $(LIBFT)
 
 clean:
-	# remove todos os .o do projeto
 	rm -f $(OBJS_PUSH_SWAP)
-	# delega clean na libft
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	# remove executáveis
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
